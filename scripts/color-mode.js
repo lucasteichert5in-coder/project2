@@ -13,7 +13,7 @@ function toggleColorMode(event) {
 
     }
 
-    console.log("event =",event);
+    console.log("event =", event);
 
 }
 
