@@ -15,8 +15,12 @@ let sixbutton = document.getElementById("six-button");
 let sevenbutton = document.getElementById("seven-button");
 let eightbutton = document.getElementById("eight-button");
 let ninebutton = document.getElementById("nine-button");
-let plus = document.getElementById("plus-button");
-let equal = document.getElementById("equal-button");
+let plusbutton = document.getElementById("plus-button");
+let equalbutton = document.getElementById("equal-button");
+let minusbutton = document.getElementById("minus-button");
+let memory = 0;
+let answer = 0;
+
 
 // Define functions
 function add1() {
@@ -86,16 +90,26 @@ function nine() {
 }
 
 function Show(number) {
-
     counter.textContent = number;
+
 }
 
-function plus () {
-   
+function plus(event) {
+    memory = number;
+    number = 0;
+    Show(memory);
+    
 }
 
-function equal (){}
+function minus (event){
+ 
+}
+function equal() {
+answer = memory + number;
+Show (answer);
 
+console.log(answer,memory)
+}
 //Define Button Event Listeners
 counterbutton.addEventListener("click", add1);
 minusbutton.addEventListener("click", minus1);
@@ -110,5 +124,6 @@ sixbutton.addEventListener("click", six);
 sevenbutton.addEventListener("click", seven);
 eightbutton.addEventListener("click", eight);
 ninebutton.addEventListener("click", nine);
-plusbutton.addEventListener("click, plus");
-equalbutton.addEventListener("click, equal");
+plusbutton.addEventListener("click", plus);
+equalbutton.addEventListener("click", equal);
+minusbutton.addEventListener("click", minus);
