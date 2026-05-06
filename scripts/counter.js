@@ -1,7 +1,7 @@
 //Make Variables
 
 let counter = document.getElementById("counter");
-let number = 0;
+
 let counterbutton = document.getElementById("add-1-counter-button");
 let minusbutton = document.getElementById("minus-1-counter-button");
 let clearbutton = document.getElementById("clear-button");
@@ -17,10 +17,11 @@ let eightbutton = document.getElementById("eight-button");
 let ninebutton = document.getElementById("nine-button");
 let plusbutton = document.getElementById("plus-button");
 let equalbutton = document.getElementById("equal-button");
-let minusbutton = document.getElementById("minus-button");
+let subtractbutton = document.getElementById("minus-button");
 let memory = 0;
-let answer = 0;
-
+let number = 0;
+let symbolmemory ="";
+let answer =0;
 
 // Define functions
 function add1() {
@@ -98,15 +99,27 @@ function plus(event) {
     memory = number;
     number = 0;
     Show(memory);
-    
+    symbolmemory="plus";
+}
+function minus(event){
+memory = number;
+    number = 0;
+    Show(memory);
+symbolmemory="minus"
 }
 
-function minus (event){
- 
-}
 function equal() {
-answer = memory + number;
+    if (symbolmemory === "plus") {
+        answer = memory + number;
+    }
+if(symbolmemory ==="minus"){
+    answer = memory - number;
+}
 Show (answer);
+
+
+
+
 
 console.log(answer,memory)
 }
@@ -126,4 +139,4 @@ eightbutton.addEventListener("click", eight);
 ninebutton.addEventListener("click", nine);
 plusbutton.addEventListener("click", plus);
 equalbutton.addEventListener("click", equal);
-minusbutton.addEventListener("click", minus);
+subtractbutton.addEventListener("click", minus);

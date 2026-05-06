@@ -59,14 +59,15 @@ footer {
   border-color: #01ff62;
   border-style: solid;
   min-width: 200px;
-  max-width: 200px;
+ display: inline-block;
 }
 
 #counter {
   border-width: 5px;
   border-color: red;
   border-style: solid;
-margin: 10px;
+  font-size: 24px;
+margin: 30spx;
 padding: 10px;
 }
 
